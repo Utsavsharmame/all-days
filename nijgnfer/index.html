@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background: #f5f6ff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav{
+            height: 70px;
+            width: 100%;
+            /* border: 2px solid; */
+            background-color: #ffffff;
+            box-shadow: 0 0 8px #121213;
+            display: flex;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .left{
+            height: 100%;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 20px 0 100px;
+        }
+
+        .left img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-left: 50px;
+        }
+
+        .left input{
+            width: 600px;
+            height: 30px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #e2f3f7;
+            border: none;
+        }
+
+        .right{
+            height: 100%;
+            width: 25%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .right a{
+            text-decoration: none;
+            color: black;
+            font-size: larger;
+            font-weight:200;
+        }
+        /* Container */
+        #cnt {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 25px;
+        }
+
+        /* Card */
+        .card {
+            width: 330px;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: .3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .up {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .up img {
+            width: 90%;
+            height: 260px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .up h2 {
+            font-size: 16px;
+            text-align: center;
+            padding: 8px 10px 15px;
+            color: #444;
+        }
+
+        /* Bottom Section */
+        .down {
+            width: 100%;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 18px;
+        }
+
+        .down button {
+            height: 36px;
+            width: 110px;
+            background: linear-gradient(45deg, #ff6600, #ff3300);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .down p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a8c3a;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="left">
+            <img src="wai.jpg" alt="">
+            <input type="search" placeholder="search here">
+        </div>
+
+        <div class="right">
+            <a href="">Login</a>
+            <a href="">Cart</a>
+            <a href="">Contact Us</a>
+        </div>
+    </nav>
+
+    <div id="cnt"></div>
+
+    <script>
+        let api = "https://fakestoreapi.com/products";
+        let cnt = document.getElementById("cnt");
+        let productData = [];
+
+        function fetchData(url) {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    let input = "";
+                    productData = data;
+                    data.map(val => {
+                        input += `
+            <div class="card" onclick = "gotoproducts(${val.id})">
+                <div class="up">
+                    <img src="${val.image}" alt="${val.title}">
+                    <h2>${val.title}</h2>
+                </div>
+
+                <div class="down">
+                    <button onClick="storeIncart(${val.id})">Add To Cart</button>
+                    <p>$${val.price}</p>
+                </div>
+            </div>
+            `;
+                    })
+                    cnt.innerHTML = input;
+                })
+                .catch(err => {
+                    console.log("Error:", err);
+                })
+        }
+        fetchData(api);
+        function storeIncart(id){
+
+            event.stopPropagation()
+            // console.log(id);
+            let singleProductData = productData.find((val)=>{return val.id == id});
+            console.log(singleProductData);
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push(singleProductData);
+            alert("Product added to cart");
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+
+        function gotoproducts(id){
+
+            localStorage.setItem("id", id);
+            window.location.href = `producuctview.html?id=${id}`
+
+        }
+    </script>
+
+</body>
+
+</html>

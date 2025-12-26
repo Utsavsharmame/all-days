@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+
+.cnt {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 500px;
+    width: 100%;
+    border: 2px solid red;
+    justify-content: center;
+    align-items: center;
+
+
+    /*  flex-direction: row; 
+    justify-content: space-evenly;*/
+
+
+}
+
+
+.box {
+    height: 200px;
+    width: 30%;
+    border: 2px solid blue;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.image {
+    width: 30%;
+    height: 70%;
+    object-fit: cover;
+    margin: auto;
+}
+
+
+.sixth {
+    order: 1;
+}
+
+
+.second {
+    order: 2;
+}
+
+.third {
+    order: 3;
+}
+
+.fourth {
+    order: 4;
+}
+
+.fifth {
+    order: 5;
+}
+
+.first {
+    order: 6;
+}

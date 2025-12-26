@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+</style>
+
+<body>
+
+    <div id="cnt"></div>
+    <script>
+
+
+        fetchdata("https://jsonplaceholder.typicode.com/todos");
+
+        let container = document.getElementById("cnt");
+
+        console.log(start);
+
+        async function fetchdata(url) {
+            let response = await fetch(url) //returnpromises
+            console.log(response);
+
+            try {
+                if (response.status == 200) {
+                    let data = await response.json();
+                    console.log(data);
+                    let input = "";
+                    data.map((val) => {
+                        input = input + `
+                <div>
+                <h1>${val.title}</h1>
+                <p>${val.userId}</p>
+                <p>${val.id}</p>
+                <p>${val.completed}</p>
+                </div>
+                `
+                    })
+                    container.innerHTML = input;
+
+                }
+                else {
+                    throw new Error("Failed to fetch data", response);
+                    console.log(response);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        console.log(end);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

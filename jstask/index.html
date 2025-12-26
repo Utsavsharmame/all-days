@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+
+
+
+        <br>
+        <button type="submit">Submit</button>
+
+
+
+    </form>
+
+    <script>
+
+        let submit = document.querySelector("button");
+        submit.addEventListener("click", function () {
+            let a = document.getElementById("name").value;
+            let b = document.getElementById("password").value;
+
+
+            let data = { name: a, password: b };
+            let json_data = JSON.stringify(data);
+            localStorage.setItem("user", json_data);
+
+
+        });
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

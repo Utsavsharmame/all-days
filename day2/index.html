@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Store Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      text-align: center;
+      color: #666;
+    }
+
+    .cnt {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2a9d8f;
+      margin: 8px 0;
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+
+    .btn button {
+      background: #2a9d8f;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn button:hover {
+      background: #21867a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 Welcome to Day 2</h1>
+  <p>This is the content for day 2.</p>
+
+  <div id="products" class="cnt">Loading products…</div>
+
+  <script>
+    function fetchdata(url) {
+      let container = document.getElementById("products");
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          let input = "";
+          data.forEach((val) => {
+            let title = val.title;
+            let imgUrl = val.image;
+            let price = val.price;
+
+            input += `
+              <div class="card">
+                <img src="${imgUrl}" alt="Product Image" />
+                <h3>${title}</h3>
+                <p class="price">$${price}</p>
+                <div class="btn">
+                  <button>Buy Now</button>
+                </div>
+              </div>
+            `;
+          });
+          container.innerHTML = input;
+        })
+        .catch((err) => {
+          console.error("Error:", err);
+          container.innerHTML = "<p>Failed to load products.</p>";
+        });
+    }
+
+    fetchdata("https://fakestoreapi.com/products");
+  </script>
+
+</body>
+</html>
