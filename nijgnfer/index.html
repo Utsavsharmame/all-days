@@ -226,8 +226,28 @@
         localStorage.setItem("id", id);
         window.location.href = `producuctview.html?id=${id}`;
       }
-    
-   
+
+      function displaydata(data) {
+        let input = "";
+        productData = data;
+        data.map((val) => {
+          input += `
+            <div class="card" onclick = "gotoproducts(${val.id})">
+                <div class="up">
+                    <img src="${val.image}" alt="${val.title}">
+                    <h2>${val.title}</h2>
+                </div>
+
+                <div class="down">
+                    <button onClick="storeIncart(${val.id})">Add To Cart</button>
+                    <p>$${val.price}</p>
+                </div>
+            </div>
+            `;
+        });
+        cnt.innerHTML = input;
+      }
+
       // logic for sesarch bar
       let searchbox = document.getElementById("search1");
       searchbox.addEventListener("input", (e) => {
@@ -235,10 +255,10 @@
         let result = productData.filter((val) => {
           return val.title.toUpperCase().includes(e.target.value.toUpperCase());
         });
-        console.log(result);
-        console.log();
-
-
+        // console.log(result);
+        // console.log();
+        displaydata(result);
+        
       });
     </script>
   </body>
