@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #main {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        background-color: rgb(204, 75, 75);
+        grid-template-rows: 100px 100px 100px 100px;
+
+        grid-template-columns: 150px 150px 150px 150px;
+        justify-content: center;
+        align-content: center;
+        gap: 20px 50px;
+      }
+
+      .box {
+        border: 1px solid;
+      }
+
+      #one {
+        background-color: yellow;
+        order: 2;
+      }
+      #two {
+        order: 1;
+        background: olive;
+      }
+      #three {
+        background-color: blue;
+        order: 4;
+      }
+      #four {
+        background: navajowhite;
+        order: 6;
+      }
+      #five {
+        background: rgb(105, 233, 105);
+        order: 3;
+      }
+      #six {
+        background: lightpink;
+        order: 12;
+      }
+      #seven {
+        background-color: aqua;
+        order: 8;
+      }
+      #eight {
+        background: green;
+       
+      }
+
+      #nine {
+        background: purple;
+        
+      }
+      #ten {
+        background: grey;
+       
+      }
+      #eleven {
+        background: brown;
+       
+      }
+      #twelve {
+        background: coral;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div class="box" id="one">1</div>
+      <div class="box" id="two">2</div>
+      <div class="box" id="three">3</div>
+      <div class="box" id="four">4</div>
+      <div class="box" id="five ">5</div>
+      <div class="box" id="six">6</div>
+      <div class="box" id="seven">7</div>
+      <div class="box" id="eight">8</div>
+      <div class="box" id="nine">9</div>
+      <div class="box" id="ten">10</div>
+      <div class="box" id="eleven">11</div>
+      <div class="box" id="twelve">12</div>
+    </div>
+  </body>
+</html>

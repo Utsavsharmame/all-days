@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+
+        #main{
+
+            text-align: center;
+           
+            font-size: 30px;
+
+        }
+             
+        
+        #plus{
+            height: 50px;
+             width: auto;
+             background: #df8585;
+             
+        }
+        
+        
+        
+        #zero{
+            height: 50px;
+            width: auto;
+            background-color: lightgreen;
+        }
+        
+        
+        #minus{
+            height: 50px;
+            width: auto;
+            background-color: aqua;
+        }
+      </style>
+</head>
+<body>   
+     <div  id="main">  
+
+     <button id="plus">+</button>
+        <button id="zero">0</button>
+        <button id="minus">-</button>
+        <p id="count">0</p>
+</div>
+       
+   
+       <script>
+        let a = document.getElementById("count");
+        let plus = document.getElementById("plus");
+        let zero = document.getElementById("zero");
+        let minus = document.getElementById("minus");
+
+        let count = 0;
+
+        plus.addEventListener("click", function(){
+            count++;
+            a.innerHTML = count;
+
+        })
+
+        
+        zero.addEventListener("click", function(){
+            count = 0;
+            a.innerHTML = count;
+
+        })
+        
+        minus.addEventListener("click", function(){
+            count--;
+            a.innerHTML = count;
+
+        })
+
+
+
+       </script>   
+    
+</body>
+</html>
