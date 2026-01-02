@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #007bff, #00c6ff);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-box {
+        background: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        width: 320px;
+      }
+
+      .login-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .login-box .field {
+        margin-bottom: 15px;
+      }
+
+      .login-box label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .login-box input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .login-box button {
+        width: 100%;
+        padding: 12px;
+        background: #007bff;
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .login-box button:hover {
+        background: #0056b3;
+      }
+
+      .login-box .signup {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      .login-box .signup a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .login-box .signup a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form method="post" id="login-form">
+        <div class="field">
+          <label for="un">Username</label>
+          <input
+            type="text"
+            id="un"
+            name="name"
+            placeholder="Your name"
+            required
+          />
+          <p id="error-un"></p>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+            required
+          />
+          <p id="error-pwd"></p>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p class="signup">Don’t have an account? <a href="#">Sign up</a></p>
+    </div>
+
+    <script>
+      let loginForm = document.getElementById("login-form");
+      let unval = document.getElementById("un");
+      let pwdval = document.getElementById("password");
+      let errorUn = document.getElementById("error-un");
+      let errorPwd = document.getElementById("error-pwd");
+
+      let allUserData = JSON.parse(localStorage.getItem("userData")) || [];
+
+      unval.addEventListener("change", (e) => {
+        let result = allUserData.find((val) => {
+          return val.un === e.target.val;
+        });
+        if (result) {
+          errorUn.textContent = "";
+          unval.style.border = "2px solid green";
+        } else {
+          errorUn.textContent = "Username not found";
+          errorUn.style.color = "red";
+          unval.style.border = "2px solid red";
+        }
+
+        pwdval.addEventListener("change", (e) => {
+          let result = allUserData.find((val) => {
+            return val.password === e.target.val;
+          });
+          if (result) {
+            errorPwd.textContent = "";
+            pwdval.style.border = "2px solid green";
+          } else {
+            errorUn.textContent = "Username not found";
+            errorUn.style.color = "red";
+            unval.style.border = "2px solid red";
+          }
+          loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            window.location.href = "index.html";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

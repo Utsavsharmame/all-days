@@ -229,7 +229,7 @@
 
       function displaydata(data) {
         let input = "";
-        productData = data;
+
         data.map((val) => {
           input += `
             <div class="card" onclick = "gotoproducts(${val.id})">
@@ -258,7 +258,6 @@
         // console.log(result);
         // console.log();
         displaydata(result);
-        
       });
     </script>
   </body>

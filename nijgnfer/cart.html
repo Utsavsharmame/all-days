@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="btn">
+      <div class="cartcnt"></div>
+      <div class="checkout"></div>
+    </div>
+
+    <script>
+      let cartcnt = document.getElementById("cartcnt");
+      let checkout = document.getElementById("checkout");
+
+      let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let price = 0;
+      if (cartData.length == 0) {
+        cartcnt.innerHTML = `
+              <h2>  Cart is empty  </h2>
+            `;
+      } else {
+        let input = "";
+        cartData.map((val) => {
+          price += val.price;
+
+          // logic display data
+        });
+
+        cartcnt.innerHTML = input;
+      }
+    </script>
+  </body>
+</html>
+
