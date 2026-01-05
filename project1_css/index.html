@@ -1,61 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>registrati</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo"><h1>Logo</h1></div>
-        <div>  <ul class="allLinks">
-            <li>
-                <input type="search"
-                placeholder="enter the name"
-                class="search"
-                />
-            </li>
-        </ul></div>
-        <div class="btn">
-            <button class="login">Login</button>
-            <button class="cart">Cart</button>
-            <button class="booked">Booked</button>
-        </div>
+      <div class="logo"><h1>Logo</h1></div>
+      <div>
+        <ul class="allLinks">
+          <li>
+            <input type="search" placeholder="enter the name" class="search" />
+          </li>
+        </ul>
+      </div>
+      <div class="btn">
+        <button class="login">Login</button>
+        <button class="cart">Cart</button>
+        <button class="booked">Booked</button>
+      </div>
     </header>
 
     <main class="main">
-
-       <div>
-        <div><img src="" alt="prod img"></div>
-        <p> product name</p>
-        <div class="mini">
-            <p>$ 23</p>
-            <button class="btn2">buy now</button>
+      <div>
+        <div>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/024/710/526/original/30-60-90-day-plan-management-infographic-3-point-stage-template-with-big-honeycomb-shape-concept-for-slide-presentation-free-vector.jpg"
+            alt="prod img"
+            class="img"
+          />
         </div>
-       </div> 
-
-       
-       <div>
-        <div><img src="" alt="prod2"></div>
-        <p> product name</p>
+        <p>product name</p>
         <div class="mini">
-            <p>$ 23</p>
-            <button class="btn2">buy now</button>
+          <p>$ 23</p>
+          <button class="btn2">buy now</button>
         </div>
-       </div> 
-       
-       <div>
-        <div><img src="" alt="prod 3"></div>
-        <p> product name</p>
-        <div class="mini">
-            <p>$ 23</p>
-            <button class="btn2">buy now</button>
-        </div>
-       </div> 
+      </div>
 
+      <div>
+        <div>
+          <img
+            src="https://tse4.mm.bing.net/th/id/OIP.EeXqaJHFAMP3DItjRXPb4AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="prod2"
+            class="img"
+          />
+        </div>
+        <p>product name</p>
+        <div class="mini">
+          <p>$ 23</p>
+          <button class="btn2">buy now</button>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <img
+            src="https://www.slidegeeks.com/media/catalog/product/cache/1280x720/3/0/30_60_90_Days_Project_Management_Plan_Ppt_PowerPoint_Presentation_Diagram_Images_Slide_1.jpg"
+            alt="prod 3"
+            class="img"
+          />
+        </div>
+        <p>product name</p>
+        <div class="mini">
+          <p>$ 23</p>
+          <button class="btn2">buy now</button>
+        </div>
+      </div>
+
+      <br />
     </main>
-    
-    <footer></footer>
-</body>
+
+    <form action="">
+      <label for="name">Name</label>
+      <input type="text" placeholder="Enter the name" />
+      <br />
+      <br />
+
+      <label for="password">password</label>
+      <input type="password" placeholder="Enter the password" />
+      <br />
+      <br />
+
+      <input type="radio" />Male <input type="radio" /> Female
+      <br />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="chatmsgbot">
+      <!-- <form>
+        <div >
+        
+         <p class="p1">How can i help You ?</p>
+          <label for="name">queries</label>
+          <input type="text" placeholder="queries" />
+        </div>
+
+        <div>
+          <label for="password">message</label>
+          <input type="message type" placeholder="Enter " />
+        </div>
+        <button>Submit</button>
+      </form> -->
+
+      <div class="up">
+        <p>name</p>
+        <p id="close">X</p>
+      </div>
+      <div class="middle"></div>
+      <div class="bottom"></div>
+    </div>
+
+    <div id="chatbot">chatbot</div>
+    <script>
+      let messageBox = document.getElementById("chatmsgbot");
+      let chatbot1 = document.getElementById("chatbot");
+      let closebtn = document.getElementById("close");
+
+      chatbot1.addEventListener("click", () => {
+        messageBox.style.display = "block";
+      });
+
+      closebtn.addEventListener("click", () => {
+        messageBox.style.display = "none";
+      });
+    </script>
+  </body>
 </html>
