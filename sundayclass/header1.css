@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+}
+header {
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  flex-basis: 15%;
+  /* border: 2px solid; */
+  display: grid;
+  place-content: center;
+}
+.allLinks {
+  flex-basis: 45%;
+  /* border: 2px solid; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+}
+.menu {
+  flex-basis: 10%;
+  /* border: 2px solid; */
+  display: grid;
+  place-content: center;
+}
+
+.userInput {
+  height: 30px;
+  width: 20rem;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  background-color: #efefef;
+  border-radius: 5px;
+}
+.userInput:focus {
+  border: 1px solid gray;
+}
+
+.btn {
+  padding: 4px 12px;
+  /* border: none; */
+  background-color: crimson;
+  color: #efefef;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid crimson;
+}
+.btn:hover {
+  background: #fff;
+  color: crimson;
+  border: 1px solid;
+}
+
+#chatbot {
+  height: 30px;
+  width: 30px;
+  background-color: aqua;
+  color: aliceblue;
+  border-radius: 50%;
+  font-size: 12px;
+  display: grid;
+  place-content: center;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+}
+
+#chatmsgbot {
+  height: 150px;
+  width: 100px;
+
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  display: none;
+  border: 2px solid;
+}
+
+.up {
+  height: 10%;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 10px;
+  padding: 0 5px;
+}
+
+.middle {
+  height: 80%;
+  background-color: #fff;
+}
+.bottom {
+  height: 10%;
+  background-color: aquamarine;
+}
+
+#close {
+  height: 90%;
+  width: 14px;
+  background-color: brown;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+#close:hover {
+  background-color: burlywood;
+}
+
+@media (max-width: 576px) {
+  .allLinks {
+    display: none;
+  }
+  .menu {
+    flex-basis: 15%;
+  }
+}
+
+@media (min-width: 577px) and (max-widrh: 993px) {
+  .userInput {
+    width: 15rem;
+  }
+  .menu {
+    display: none;
+  }
+  .allLinks {
+    flex-basis: 65%;
+  }
+}
+@media (min-width: 994px) {
+  .menu {
+    display: none;
+  }
+}

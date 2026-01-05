@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="header1.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+
+      <ul class="allLinks">
+        <li>
+          <input
+            type="search"
+            placeholder="enter product name"
+            class="userInput"
+          />
+        </li>
+        <li>
+          <a href="#">
+            <button class="btn">Login</button>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <button class="btn">Cart</button>
+          </a>
+        </li>
+      </ul>
+
+      <div class="menu">Menu</div>
+    </header>
+
+    <div id="chatmsgbot">
+      <!-- <form>
+        <div >
+        
+         <p class="p1">How can i help You ?</p>
+          <label for="name">queries</label>
+          <input type="text" placeholder="queries" />
+        </div>
+
+        <div>
+          <label for="password">message</label>
+          <input type="message type" placeholder="Enter " />
+        </div>
+        <button>Submit</button>
+      </form> -->
+
+      <div class="up">
+        <p>name</p>
+        <p id="close">X</p>
+      </div>
+      <div class="middle"></div>
+      <div class="bottom"></div>
+    </div>
+
+    <div id="chatbot">chatbot</div>
+    <script>
+      let messageBox = document.getElementById("chatmsgbot");
+      let chatbot1 = document.getElementById("chatbot");
+      let closebtn = document.getElementById("close");
+
+      chatbot1.addEventListener("click", () => {
+        messageBox.style.display = "block";
+      });
+
+      closebtn.addEventListener("click", () => {
+        messageBox.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

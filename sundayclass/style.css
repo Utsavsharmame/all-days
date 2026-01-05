@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#chatbot {
+  height: 50px;
+  width: 50px;
+  background-color: aqua;
+  color: aliceblue;
+  border-radius: 50%;
+  font-size: 12px;
+  display: grid;
+  place-content: center;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+}
+header {
+  height: 50px;
+  width: 100%;
+  background-color: brown;
+  position: fixed;
+  top: 0;
+}
+
+h1 {
+  margin-top: 50px;
+}
+.para {
+  color: blueviolet;
+  position: sticky;
+  top: 0;
+}
+
