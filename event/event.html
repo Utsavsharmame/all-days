@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="getAlert()">Submit</button> -->
+    <input type="text" placeholder="enter" />
+
+    <script>
+      let uiInput = document.querySelector("input");
+      uiInput.addEventListener("", (e) => {
+        e.target.value = e.target.value.toUpperCase();
+      });
+
+      //   let btn = document.querySelector("button");
+      //   console.log(btn);
+      // btn.ondblclick = function(){
+      //     alert("form submitted");
+
+      // }
+
+      //   btn.addEventListener("mouseover", () => {
+      //     alert("form submited");
+      //   });
+
+      //    function getAlert(){
+      //  alert("form submited")
+      //    }
+    </script>
+  </body>
+</html>
