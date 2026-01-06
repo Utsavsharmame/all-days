@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 93vh;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      form {
+        width: 250px;
+        height: 200px;
+        font-size: 16px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 30px;
+      }
+
+      input {
+        height: 25px;
+        padding-left: 10px;
+      }
+
+      button {
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: rgb(211, 128, 60);
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="">
+      <div class="names">
+        <label for="">Username: </label>
+        <input
+          type="text"
+          name=""
+          id="username"
+          placeholder="Enter your name"
+        /><br />
+      </div>
+      <button id="subMit">submit</button>
+    </form>
+
+    <button id="showData">Show Data</button>
+    <table border="1" id="table"></table>
+
+    <script>
+      let data = document.querySelector("form");
+      data.addEventListener("submit", () => {
+        let username = document.querySelector("input").value;
+        let names = JSON.parse(localStorage.getItem("users")) || [];
+        names.push(username);
+        alert("Username added successfully");
+        localStorage.setItem("users", JSON.stringify(names));
+      });
+
+      let showData = document.querySelector("#showData");
+      let table = document.querySelector("#table");
+      showData.addEventListener("click", () => {
+        let names = JSON.parse(localStorage.getItem("users"));
+        names.map((val) => {
+          let input = "";
+          input += `
+                <tr>
+                <th>Username</th>
+                <td>${val}</td>
+                </tr>
+            `;
+          table.innerHTML += input;
+        });
+      });
+    </script>
+  </body>
+</html>

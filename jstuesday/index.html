@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a1 {
+        width: auto;
+        height: 300px;
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      form {
+        width: 400px;
+        padding: 20px;
+        border: 1px solid #333;
+        border-radius: 8px;
+        background-color: #fff;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      button {
+        padding: 10px 15px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      #output {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a1">
+      <form>
+        <label for="username">Enter username</label>
+        <input type="text" placeholder="username" id="input1" />
+        <button id="btn">Submit</button>
+      </form>
+
+      <button id="btn1">Show data</button>
+      <button id="btn2">Hide data</button>
+
+      <div id="output"></div>
+    </div>
+
+    <script>
+      const input = document.getElementById("input1");
+      const btn = document.getElementById("btn");
+      const btnShow = document.getElementById("btn1");
+      const btnHide = document.getElementById("btn2");
+      const output = document.getElementById("output");
+
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        let username = input.value.trim();
+        if (username) {
+          let names = JSON.parse(localStorage.getItem("username")) || [];
+          names.push(username);
+          localStorage.setItem("username", JSON.stringify(names));
+          alert("Stored username");
+          input.value = "";
+        }
+      });
+
+      btnShow.addEventListener("click", function () {
+        let storedNames = JSON.parse(localStorage.getItem("username")) || [];
+        output.textContent = "Stored usernames: " + storedNames.join(", ");
+      });
+
+      btnHide.addEventListener("click", function () {
+        output.textContent = "";
+      });
+    </script>
+  </body>
+</html>
