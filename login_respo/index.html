@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logoCnt">
+        <h1>Logo</h1>
+      </div>
+      <ul class="linkcnt">
+        <li>
+          <input
+            type="search"
+            placeholder="enter product name"
+            class="searchInput"
+          />
+        </li>
+        <li>
+          <a href="#">
+            <button id="loginbtn">Login</button>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <button class="navBtn">Cart</button>
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore fugiat
+      fuga possimus minima dignissimos atque aspernatur iste in illo culpa,
+      voluptatibus aperiam? Tempore magnam id et inventore necessitatibus! Ipsum
+      quibusdam dolorem expedita voluptate cupiditate. Modi tenetur consectetur
+      consequuntur ad omnis.
+    </h1>
+
+    <div id="logincnt">
+      <div class="up"><i id="close" class="fa-solid fa-x"></i></div>
+      <form action="" class="loginform">
+        <label for="username">username</label>
+        <input type="text" id="username" />
+
+        <label for="password">password</label>
+        <input type="password" id="password" />
+
+        <button>Submit</button>
+      </form>
+    </div>
+
+    <script>
+      let btn = document.getElementById("loginbtn");
+      let cnt = document.getElementById("logincnt");
+      let closeBtn = document.getElementById("close");
+
+      btn.addEventListener("click", () => {
+        cnt.style.display = "block";
+      });
+      closeBtn.addEventListener("click", () => {
+        cnt.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
