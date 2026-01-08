@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let a= 20;
+      // let b = 390;
+      // console.log("start");
+
+      // function add(){
+      //     let c= 44;
+      //     console.log(c+a);
+      // }
+      // add()
+      // console.log("end");
+
+      function outer() {
+        let a = 55;
+        let b = 35;
+        let d = 20;
+
+        function inner() {
+          let c = 55;
+          console.log(a + c);
+          console.log(b + c);
+        }
+        inner();
+      }
+      outer();
+    </script>
+  </body>
+</html>
