@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="headerCnt">
+      <div class="logoCnt">
+        <i id="menuIcon" class="fa-solid fa-bars"></i>
+        <img src="./ytimg-removebg-preview.png" alt="img" />
+      </div>
+    </header>
+
+    <aside class="sidebar" id="aside">
+      <div class="box">
+        <i id="menu" class="fa-solid fa-house"></i>
+        <p>Home</p>
+      </div>
+      <div class="box">
+        <i class="fa-solid fa-house"></i>
+        <p>Home</p>
+      </div>
+      <div class="box">
+        <i class="fa-solid fa-house"></i>
+        <p>Home</p>
+      </div>
+    </aside>
+
+    <script>
+      let flag = true;
+
+      let menuIcon = document.getElementById("menuIcon");
+      let aside = document.getElementById("aside");
+
+      menuIcon.addEventListener("click", () => {
+        if (flag == true) {
+          aside.style.width = "200px";
+          flag = false;
+        } else {
+          aside.style.width = "35px";
+          flag = true;
+        }
+      });
+    </script>
+  </body>
+</html>
