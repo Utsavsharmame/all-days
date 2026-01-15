@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #outerdiv {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(210, 28, 28);
+      }
+      #middlediv {
+        width: 150px;
+        height: 150px;
+        background-color: rgb(50, 152, 186);
+      }
+      #innerdiv {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(59, 233, 59);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outerdiv">
+      <div id="middlediv">
+        <div id="innerdiv"></div>
+      </div>
+    </div>
+
+    <script>
+      let outerdiv = document.getElementById("outerdiv");
+
+      let middlediv = document.getElementById("middlediv");
+
+      let innerdiv = document.getElementById("innerdiv");
+
+      outerdiv.addEventListener("click", function (e) {
+        console.log("outer div clicked");
+      });
+      middlediv.addEventListener("click", function (e) {
+        e.stopPropagation();
+        console.log("middle div clicked");
+      });
+      innerdiv.addEventListener("click", function (e) {
+        e.stopPropagation();
+        console.log("inner div clicked");
+      });
+    </script>
+  </body>
+</html>

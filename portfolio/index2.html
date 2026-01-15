@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Awesome Project Card</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b0e14;
+        --card: #141a26;
+        --neon: #0ff0f8;
+        --muted: #aeb6c2;
+      }
+      body {
+        background: radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.9) 40%
+          ),
+          linear-gradient(135deg, #0b0e14 0%, #0b0e14 60%, #1b2430 100%);
+        min-height: 100vh;
+        color: #fff;
+      }
+      .card-neo {
+        border-radius: 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(20, 26, 38, 0.95),
+          rgba(5, 8, 18, 0.95) 60%
+        );
+        padding: 28px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      /* subtle curved image backdrop like the example */
+      .card-neo::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        width: 520px;
+        height: 260px;
+        transform: translateX(-50%);
+        background: url("https://images.unsplash.com/photo-1533682816284-6a0a3c4f60f7?q=80&w=1400&auto=format&fit=crop")
+          center/cover no-repeat;
+        filter: saturate(0.9) brightness(0.8);
+        opacity: 0.25;
+        border-radius: 50%/60%;
+      }
+      .neon-title {
+        font-family: "Inter", system-ui, -apple-system, Arial;
+        font-weight: 800;
+        font-size: 2rem;
+        color: #1fe3ff;
+        text-shadow: 0 0 8px rgba(31, 227, 255, 0.9);
+        letter-spacing: 0.5px;
+      }
+      .badge-tech {
+        border-radius: 999px;
+        padding: 0.25rem 0.8rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-right: 0.4rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.04);
+        color: #e6eaf3;
+      }
+      .view-btn {
+        background: linear-gradient(90deg, #7bf6ff, #5e3dfc);
+        color: #04131a;
+        font-weight: 700;
+        border: 0;
+        padding: 0.9rem 1.4rem;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .view-btn:hover {
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+      }
+      .muted {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card-neo p-4 p-md-5">
+            <h2 class="neon-title mb-2">Awesome Project</h2>
+            <p class="mb-3 text-start muted">
+              Experience cutting-edge technology and stunning design in this
+              revolutionary project. Prepare to be amazed!
+            </p>
+
+            <div class="d-flex flex-wrap align-items-center mb-3">
+              <span
+                class="badge-tech border-0"
+                style="background: #1d1d1d; color: #ff8c00"
+                >HTML</span
+              >
+              <span
+                class="badge-tech"
+                style="background: #1d1d1d; color: #7fb7ff"
+                >CSS</span
+              >
+              <span
+                class="badge-tech"
+                style="background: #1d1d1d; color: #ffd166"
+                >JavaScript</span
+              >
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button class="view-btn btn w-100 w-md-auto">
+                View on GitHub
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional for interactivity) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

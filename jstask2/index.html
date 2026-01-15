@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        display: flex;
+        gap: 10px;
+      }
+      .child {
+        border: 1px solid black;
+        padding: 20px;
+        width: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p > 20, 30,45,56,66 </p>
+    <input type="text" placeholder="element ">
+    <button id="btn1">Check</button>
+      <p class="result"></p> -->
+    <!-- 
+      <input type="text">
+      <p class="result"></p> -->
+    <h2>otp</h2>
+    <div class="parent">
+      <div class="child">-</div>
+      <div class="child">-</div>
+      <div class="child">-</div>
+      <div class="child">-</div>
+    </div>
+
+    <br /><br />
+
+    <button onclick="result()">otp</button>
+
+    <script>
+      //     let a = document.getElementById("btn1");
+      //     let arr = [20, 30,45,56,66];
+
+      //    let result = arr.find((e) => {
+      //     return a === e;
+
+      //    }
+
+      //     );
+      //     if(result){
+      //         alert("found");
+      //     }
+      //     else{
+      //         alert("not found");
+      //     }
+      // let input = document.getElementsByTagName("input");
+      //     let result =document.getElementsByClassName("result");
+
+      //     let arr = [20, 30,45,56,66];
+
+      //     input[0].addEventListener("change", (e)=> {
+      //       console.log(e.target.value);
+
+      //       let result= arr.find((element) => {
+      //         return element == e.target.value;
+      //       });
+
+      //       if(result){
+      //         alert("yu")
+      //       }
+      //       else{
+      //         alert("n")
+      //       }
+
+      //     }
+
+      //     );
+
+      let tags = document.getElementsByClassName("child");
+
+      function result() {
+        function otp() {
+          let a = Math.floor(Math.random() * 10);
+          return a;
+        }
+
+        tags[0].textContent = `${otp()}`;
+        tags[1].textContent = `${otp()}`;
+        tags[2].textContent = `${otp()}`;
+        tags[3].textContent = `${otp()}`;
+      }
+    </script>
+  </body>
+</html>

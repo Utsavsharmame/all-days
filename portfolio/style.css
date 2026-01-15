@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+* {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* .profile-photo {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 5px;
+} */
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+}
+
+.nav-link:hover {
+    color: #0d6efd;
+}
+
+
+
+/* Profile photo */
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #0d6efd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+
+/* icons */
+.fa-brands {
+    font-size: 2rem;
+    margin-right: 15px;
+    color: #0d6efd;
+    transition: color 0.3s ease;
+}
+
+/* Headings tags */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555;
+}
+
+
+
+
+
+

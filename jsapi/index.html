@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="cnt"></div>
+    <script>
+      let cnt = document.getElementById("cnt");
+      let response = [];
+
+      let a = async function (url) {
+        try {
+          let R = await fetch(url);
+          let input = "";
+
+          if (R.status == 200) {
+            let d = await R.json();
+
+            console.log(d);
+            d.map((val) => {
+              input += `
+                 <div >
+                    <div> <img src="${val.image}" alt="${val.title}">
+                    <h2>${val.title}</h2>
+                        </div>
+
+                    
+                    </div>
+
+                `;
+            });
+            cnt.innerHTML = input;
+          }
+        } catch (err) {
+          console.err("error");
+        }
+      };
+      a("https://jsonplaceholder.typicode.com/users");
+    </script>
+  </body>
+</html>

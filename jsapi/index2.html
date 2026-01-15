@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      
+      .user {
+        border: 1px solid #ece9e9;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 6px;
+        width: 250px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        background-color: white;
+
+
+
+      }
+        .user h3 {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: aliceblue;
+        }
+        #users{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <h2>User List</h2>
+    <div id="users"></div>
+
+    <div></div>
+
+    <script>
+      function fetchData(url) {
+        fetch(url)
+          .then((a) => {
+            return a.json();
+          })
+          .then((data) => {
+            let usersDiv = document.getElementById("users");
+            console.log(data);
+
+            data.forEach((user) => {
+              usersDiv.innerHTML += `
+            <div class="users">
+                <h3>${user.name}</h3>
+                <p><b>Email:</b> ${user.email}</p>
+                <p><b>Phone:</b> ${user.phone}</p>
+                <p><b>City:</b> ${user.address.city}</p>
+
+            </div>
+
+            `;
+            });
+
+          })
+
+          .catch((error) => {
+            console.log("Error: ", error);
+          });
+      }
+      fetchData("https://jsonplaceholder.typicode.com/users");
+    </script>
+  </body>
+</html>
